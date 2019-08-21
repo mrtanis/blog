@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "npm run sync && hexo s",
     "sync": "yuque-hexo sync",
-    "clean:yuque": "yuque-hexo clean"
+    "clean:yuque": "yuque-hexo clean",
+    "deploy": "npm run sync && hexo clean && hexo g -d"
   },
   "dependencies": {
     "hexo": "^3.9.0",
