@@ -31,7 +31,7 @@
     "adapter": "hexo",
     "concurrency": 5,
     "baseUrl": "https://www.yuque.com/api/v2",
-    "login": "17608298969",
+    "login": "mrtanis",
     "repo": "blog",
     "onlyPublished": false
   },
