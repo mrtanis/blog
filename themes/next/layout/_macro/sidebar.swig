@@ -22,7 +22,7 @@
           </li>
         </ul>
       {%- endif %}
-
+      
       <div class="site-overview-wrap sidebar-panel{%- if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{%- endif %}">
         <div class="site-overview">
 
@@ -50,12 +50,11 @@
             {% else %}
               <div class="post-toc-content">{{ toc }}</div>
             {%- endif %}
-
           </div>
         </div>
       <!--/noindex-->
       {%- endif %}
-
+      
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
@@ -63,7 +62,13 @@
         </div>
       {%- endif %}
 
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=450 src="//music.163.com/outchain/player?type=0&id=34906671&auto=1&height=430">
+        </iframe>
+      </div>
     </div>
+    
+    
   </aside>
   <div id="sidebar-dimmer"></div>
 {% endmacro %}
