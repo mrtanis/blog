@@ -34,5 +34,8 @@
     "login": "17608298969",
     "repo": "blog",
     "onlyPublished": false
+  },
+  "devDependencies": {
+    "yuque-hexo": "^1.6.1"
   }
 }
