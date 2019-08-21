@@ -19,12 +19,14 @@ before_install:
 # - curl -o- -L https://yarnpkg.com/install.sh | bash
 # - export PATH=$HOME/.yarn/bin:$PATH
 - npm install -g hexo-cli
+- npm install -g yuque-hexo
 install:
 # 不用yarn的话这里改成 npm i 即可
 - npm i
 script:
+- npm run sync
 - hexo clean
-- hexo generate
+- hexo g
 after_success:
 - cd ./public
 - git init
