@@ -13,21 +13,26 @@ cache:
     - node_modules
 # tarvis生命周期执行顺序详见官网文档
 before_install:
+# 配置git账户信息
 - git config --global user.name "mrtanis"
 - git config --global user.email "mrtanis1992@hotmail.com"
-# 由于使用了yarn，所以需要下载，如不用yarn这两行可以删除
-# - curl -o- -L https://yarnpkg.com/install.sh | bash
-# - export PATH=$HOME/.yarn/bin:$PATH
+# 安装hexo-cli
 - npm install -g hexo-cli
+# 安装yuque-hexo(用于解析生成语雀发布的文章到hexo)
 - npm install -g yuque-hexo
 install:
-# 不用yarn的话这里改成 npm i 即可
+# 安装其他依赖
 - npm i
 script:
+# 实际执行的是 ‘yuque-hexo sync’ ，具体定义在package.json的scripts里
 - npm run sync
+# 清除缓存文件 (db.json) 和已生成的静态文件 (public)
 - hexo clean
+# 生成静态文件
 - hexo g
 after_success:
+# 接下来的步骤就是将public文件夹里面的内容推送到github.io
+# 本来可以用 'hexo deploy' 命令执行，但是这里使用的是github的access token授权，没有采用ssh，所以采用手动push
 - cd ./public
 - git init
 - git add --all .
